@@ -2,126 +2,34 @@
 
 @theme {
   /* Light Theme Colors */
-  --color-background: oklch(0.98 0 0);
-  /* Near white */
-  --color-surface: oklch(0.95 0.03 240);
-  /* Light grayish blue */
-  --color-primary: oklch(0.75 0.2 200);
-  /* Soft blue */
-  --color-secondary: oklch(0.72 0.15 120);
-  /* Soft green */
-  --color-accent: oklch(0.85 0.1 50);
-  /* Warm yellow */
-  --color-error: oklch(0.65 0.22 30);
-  /* Muted red */
-  --color-text-primary: oklch(0.2 0.02 240);
-  /* Dark grayish blue */
-  --color-text-secondary: oklch(0.4 0.01 240);
-  /* Medium grayish blue */
+  --color-background: oklch(95.37% 0.005 78.63);
+  /* Soft Warm White (#F2ECE9) */
+  --color-surface: oklch(82.29% 0.007 78.43);
+  /* Light Gray (#BFBCBA) */
+  --color-primary: oklch(69.53% 0.007 265.32);
+  /* Medium Gray (#8C8C8B) */
+  --color-secondary: oklch(39.93% 0.004 273.13);
+  /* Dark Gray (#403F3E) */
+  --color-accent: oklch(82.29% 0.007 78.43);
+  /* Using Light Gray as an accent */
+  --color-error: oklch(50% 0.25 30);
+  /* Adjusted Red */
 }
 
 /* Dark Theme Colors */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: oklch(0.1 0 0);
-      /* Near black */
-      --color-surface: oklch(0.15 0.03 240);
-      /* Dark grayish blue */
-      --color-primary: oklch(0.65 0.25 200);
-      /* Vivid blue */
-      --color-secondary: oklch(0.62 0.2 120);
-      /* Vivid green */
-      --color-accent: oklch(0.7 0.15 50);
-      /* Warm yellow */
-      --color-error: oklch(0.55 0.25 30);
-      /* Vivid red */
-      --color-text-primary: oklch(0.9 0.02 240);
-      /* Light grayish blue */
-      --color-text-secondary: oklch(0.7 0.01 240);
-      /* Medium light grayish blue */
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    --color-background: oklch(17.58% 0.004 277.06);
+    /* Near Black (#0D0D0D) */
+    --color-surface: oklch(36.83% 0.002 67.76);
+    /* Dark Gray (#403F3E) */
+    --color-primary: oklch(69.53% 0.007 265.32);
+    /* Medium Gray (#8C8C8B) */
+    --color-secondary: oklch(82.29% 0.007 78.43);
+    /* Light Gray (#BFBCBA) */
+    --color-accent: oklch(95.37% 0.005 78.63);
+    /* Soft Warm White (#F2ECE9) */
+    --color-error: oklch(50% 0.25 30);
+    /* Adjusted Red */
   }
 }
