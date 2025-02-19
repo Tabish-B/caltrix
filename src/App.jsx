@@ -20,11 +20,38 @@ function APP() {
 
   function handleOperator(op) {
     if (value === "") {
-      return;
+      return; }
+
+    const num2 = Number(value);
+
+    if (operator !== null) {
+      // Compute result before setting a new operator
+      let result;
+      switch (operator) {
+        case "+":
+          result = num1 + num2;
+          break;
+        case "-":
+          result = num1 - num2;
+          break;
+        case "x":
+          result = num1 * num2;
+          break;
+        case "/":
+          result = num1 / num2;
+          break;
+        default:
+          return;
+      }
+
+      setNum1(result); // Store result for next operation
+      setValue(""); // Clear input for new number
+      setOperator(op); // Set new operator
+    } else {
+      setNum1(num2);
+      setOperator(op);
+      setValue("");
     }
-    setNum1(Number(value));
-    setOperator(op);
-    setValue("");
   }
 
   function eq() {
@@ -35,6 +62,15 @@ function APP() {
     let result = 0;
     let num2 = Number(value);
 
+
+    if (operator === "/" && num2 === 0) {
+      setValue("Error");
+      setNum1(0);
+      setOperator(null);
+      return;
+    }
+
+    
     switch (operator) {
       case "+":
         result = num1 + num2;
@@ -42,7 +78,7 @@ function APP() {
       case "-":
         result = num1 - num2;
         break;
-      case "*":
+      case "x":
         result = num1 * num2;
         break;
       case "/":
@@ -58,13 +94,20 @@ function APP() {
   }
 
   function resetInput() {
-    setValue("0");
-  }
-
-  function resetResult() {
-    setValue("0");
+    setValue(""); // Clears the input completely
     setNum1(0);
     setOperator(null);
+  }
+
+  function cancel() {
+    if (value !== "") {
+      // If there's a number being entered, remove last digit
+      setValue(value.slice(0, -1));
+    } else if (operator !== null) {
+      // If there's no number but an operator exists, remove the operator
+      setOperator(null);
+      setValue(num1.toString()); // Restore num1 to input field
+    }
   }
 
   return (
@@ -104,7 +147,7 @@ function APP() {
         <button className="p-4 bg-accent text-background rounded-lg" onClick={() => handleOperator("/")}>
           <FaDivide />
         </button>
-        <button className="p-4 bg-accent text-background rounded-lg" onClick={() => handleOperator("*")}>
+        <button className="p-4 bg-accent text-background rounded-lg" onClick={() => handleOperator("x")}>
           <FaTimes />
         </button>
       </div>
@@ -114,8 +157,8 @@ function APP() {
         <button className="p-4 bg-secondary text-background rounded-lg" onClick={eq}>
           <FaEquals />
         </button>
-        <button className="p-4 bg-error text-white rounded-lg" onClick={resetResult}>
-          Del
+        <button className="p-4 bg-error text-white rounded-lg" onClick={cancel}>
+          C 
         </button>
         <button className="p-4 bg-error text-white rounded-lg" onClick={resetInput}>
           AC
