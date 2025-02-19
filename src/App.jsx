@@ -58,11 +58,11 @@ function APP() {
   }
 
   function resetInput() {
-    setValue("");
+    setValue("0");
   }
 
   function resetResult() {
-    setValue("");
+    setValue("0");
     setNum1(0);
     setOperator(null);
   }
@@ -76,7 +76,8 @@ function APP() {
 
       {/* Result Area */}
       <div className="w-full max-w-xs bg-surface p-4 text-center text-xl font-mono rounded-lg shadow-md">
-        {value || num1 || "0"}
+        {num1 !== 0 && operator ? `${num1} ${operator} ` : ""}
+        {value !== "" ? value : ""}
       </div>
 
       {/* Numbers */}
